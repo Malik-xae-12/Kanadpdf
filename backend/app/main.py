@@ -26,7 +26,7 @@ logging.basicConfig(
 settings = get_settings()
 
 app = FastAPI(
-    title="OneLake PDF Viewer API",
+    title="Kanad PDF Viewer API",
     description=(
         "Serves PDF files stored in a Microsoft Fabric OneLake Lakehouse "
         "via Azure AD Service Principal authentication."

@@ -1,4 +1,4 @@
-# OneLake PDF Viewer
+# kanad Viewer
 
 A production-ready full-stack application for browsing and viewing PDF reports stored in **Microsoft Fabric OneLake** (Lakehouse Files folder).
 
