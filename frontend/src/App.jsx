@@ -73,7 +73,7 @@ export default function App() {
         <>
             {/* Header */}
             <header className="header">
-                <div className="header__logo">OL</div>
+                <div className="header__logo">KP</div>
                 <h1 className="header__title">kanad PDF Viewer</h1>
                 <span className="header__badge">Fabric • Lakehouse</span>
             </header>
