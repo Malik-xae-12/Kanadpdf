@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  # ── FastAPI Backend ────────────────────────
+  backend:
+    build: ./backend
+    container_name: onelake-pdf-backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8000/health" ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # ── React Frontend (dev) ───────────────────
+  # For production, build the frontend and serve with nginx instead.
+  frontend:
+    image: node:20-alpine
+    container_name: onelake-pdf-frontend
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "5173:5173"
+    command: sh -c "npm install && npm run dev -- --host"
+    environment:
+      - VITE_API_BASE_URL=http://backend:8000
+      - VITE_API_KEY=changeme-in-production
+    depends_on:
+      - backend
