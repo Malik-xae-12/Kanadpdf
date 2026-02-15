@@ -10,7 +10,7 @@ import logging
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.responses import StreamingResponse
 
-from app.auth import verify_api_key
+
 from app.services.onelake import OneLakeService, get_onelake_service
 
 logger = logging.getLogger(__name__)
@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 router = APIRouter(
     prefix="/files",
     tags=["files"],
-    dependencies=[Depends(verify_api_key)],
+
 )
 
 
