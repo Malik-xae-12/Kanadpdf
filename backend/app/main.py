@@ -39,15 +39,21 @@ app = FastAPI(
 # ---------------------------------------------------------------------------
 # CORS
 # ---------------------------------------------------------------------------
-origins = [o.strip() for o in settings.CORS_ORIGINS.split(",") if o.strip()]
+# ---------------------------------------------------------------------------
+# CORS
+# ---------------------------------------------------------------------------
+origins = [
+    "https://kanadpdf.vercel.app",
+    "http://localhost:5173", 
+    "*"                       
+]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=False,
-    allow_methods=["*"],          # allow all methods
-    allow_headers=["*"],          # allow all headers (including X-API-Key)
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
-
 
 # ---------------------------------------------------------------------------
 # Routers
