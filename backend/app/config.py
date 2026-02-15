@@ -28,7 +28,7 @@ class Settings(BaseSettings):
     PDF_FOLDER_PATH: str = "Files/"
 
     # CORS – comma-separated origins allowed to call the API
-    CORS_ORIGINS: str = "http://localhost:5173,http://localhost:3000"
+    CORS_ORIGINS: str = "http://localhost:5173,http://localhost:,https://kanadpdf.vercel.app/"
 
     # API key placeholder for simple auth middleware (replace with real auth)
     API_KEY: str = "changeme-in-production"
