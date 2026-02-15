@@ -79,7 +79,7 @@ export default function FileList({
                         <div className="file-item__icon">PDF</div>
                         <span className="file-item__name" title={name}>
                             {name}
-                        </span>
+                        </span> 
                     </li>
                 ))}
             </ul>
